@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
         # When found, POST it to the server {"proof": new_proof, "id": id}
         post_data = {"proof": new_proof, "id": id}
-
+        print(f'Found proof: {post_data}')
         r = requests.post(url=node + "/mine", json=post_data)
         data = r.json()
 
@@ -83,4 +83,4 @@ if __name__ == '__main__':
             print('Received 1 coin, total coins = ', coins)
         # print the message from the server.
         else:
-            print(data['message'].value)
+            print(data['message'])
